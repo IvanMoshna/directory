@@ -1,6 +1,5 @@
 package com.moshna.directory.repo;
 
-import com.moshna.directory.model.Department;
 import com.moshna.directory.model.Employee;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -18,9 +17,6 @@ public interface EmployeeRepo extends CrudRepository<Employee, Long>, EmployeeRe
         return (employee, cq, cb) -> cb.like(employee.get("position"), "%" + position + "%");
     }
 
-    /*static Specification<Employee> hasDepartment(Long departmentID) {
-        return (employee, cq, cb) -> cb.equal(employee.get("departmentID"), departmentID);
-    }*/
 
     static Specification<Employee> hasDepartment(String departmentName) {
         return (employee, cq, cb) -> cb.like(employee.get("departmentName"), "%" + departmentName + "%");

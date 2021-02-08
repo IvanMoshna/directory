@@ -1,9 +1,7 @@
 package com.moshna.directory.controller;
 
 import com.moshna.directory.model.Department;
-import com.moshna.directory.repo.DepartmentRepo;
 import com.moshna.directory.service.DepartmentService;
-import com.moshna.directory.service.MainService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
