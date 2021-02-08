@@ -13,10 +13,10 @@
         <input type="text" name="name" placeholder="Filter by name" class="form-control"><br>
         <input type="text" name="position" placeholder="Filter by position" class="form-control"><br>
             <div class="form-group blu-margin">
-                <select name="departmentID" class="form-control">
+                <select name="departmentName" class="form-control">
                     <option value="">Select department</option>
                     <option th:each="department : ${departmentList}"
-                            th:value="${department.id}"
+                            th:value="${department.title}"
                             th:text="${department.title}">
                     </option>
                 </select>

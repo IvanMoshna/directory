@@ -91,9 +91,9 @@ public class EmployeeController {
     @PostMapping("filterByParams")
     public String filterByName(@RequestParam String name,
                                @RequestParam String position,
-                               @RequestParam Long departmentID,
+                               @RequestParam String departmentName,
                                Model model) {
 
-        return employeeService.filterByParams(name, position, departmentID, model);
+        return employeeService.filterByParams(name, position, departmentName, model);
     }
 }

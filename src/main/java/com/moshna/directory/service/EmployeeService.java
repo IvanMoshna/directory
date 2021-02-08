@@ -172,17 +172,17 @@ public class EmployeeService {
 
     public String filterByParams(String name,
                                String position,
-                               Long departmentID,
+                               String departmentName,
                                Model model) {
         List<Employee> employeeFilteredList = employeeRepo.findAll(where(hasFirstName(name)
                 .and(hasPosition(position))
-                .and(hasDepartment(departmentID))));
+                .and(hasDepartment(departmentName))));
         List<EmployeeDto> employeeDtoList = getEmployeeDtoList(mainService.getEmployeeList());
         List<DepartmentDto> departmentDtoList = getDepartmentDtoList(mainService.getDepartmentList());
 
         List<EmployeeDto> employeeDtoFilteredList = getEmployeeDtoList(employeeFilteredList);
         model.addAttribute("departmentList", departmentDtoList);
-        model.addAttribute("employees", employeeDtoList);
+        //model.addAttribute("employees", employeeDtoList);
         model.addAttribute("employees", employeeDtoFilteredList);
 
         return HOME_PAGE;
