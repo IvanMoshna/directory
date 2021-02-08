@@ -18,6 +18,10 @@ public interface EmployeeRepo extends CrudRepository<Employee, Long>, EmployeeRe
     }
 
     static Specification<Employee> hasDepartment(Long departmentID) {
-        return (employee, cq, cb) -> cb.equal(employee.get("departmentID"),  departmentID);
+        return (employee, cq, cb) -> cb.equal(employee.get("departmentID"), departmentID);
     }
+
+/*    static Specification<Employee> hasDepartment(String departmentTitle) {
+        return (employee, cq, cb) -> cb.like(employee.get("departmentTitle"), "%" + departmentTitle + "%");
+    }*/
 }

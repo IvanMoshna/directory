@@ -19,7 +19,6 @@ public class Employee {
     private String thirdName;
     private String position;
     private String dateOfBirth;
-    @Pattern(regexp = "\\+7[0-9]{10}", message = "Телефонный номер должен начинаться с +7, затем - 10 цифр")
     private String mobilePhone;
     @Email(message = "Email is not correct")
     private String email;
